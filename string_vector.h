@@ -7,7 +7,7 @@
 #ifndef STRING_VECTOR_H
 #define STRING_VECTOR_H
 
-#include <stddef.h> //size_t
+#include <stddef.h>
 #include <stdio.h>
 
 typedef struct StringVector {

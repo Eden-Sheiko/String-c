@@ -40,11 +40,10 @@ void sv_add_last(StringVector* sv, char* str)
         sv->arr=(char**)realloc(sv->arr,(++sv->length)  * sizeof(char*));
     }
     sv->arr[sv->length-1]=str;
-    //printf("print in sv_add_last -> %s \n",sv->arr[sv->length-1]);
 }
 
 //remove string at index. does not shrink allocation size
-void sv_remove_at(StringVector* sv, size_t index) // 1 -> 0 // 2->1 // [3]USER -> [2] me
+void sv_remove_at(StringVector* sv, size_t index)
 {
     free(sv->arr[index-1]);
     sv->arr[index-1]=NULL;

@@ -16,7 +16,7 @@ char* get_line(void)
     return buffer;
 }
 
-void str_rep_char(char* str, char find, char replace) // eden -> e -> a --> adan
+void str_rep_char(char* str, char find, char replace)
 {
     char *current_pos = strchr(str,find);
     while (current_pos) {

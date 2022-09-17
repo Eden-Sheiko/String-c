@@ -1,8 +1,6 @@
 #include "string_vector.h"
 #include "string_functions.h"
 
-//TODO: ADD a typedef to StringVectorAction here
-
 typedef void(*StringVectorAction)(StringVector*);
 
 typedef struct MenuItem {
@@ -11,8 +9,6 @@ typedef struct MenuItem {
 } MenuItem;
 
 //print function
-//
-//
 void print_func(StringVector* sv);
 //
 //String Vector Actions
@@ -37,15 +33,10 @@ void action_rep_char_all(StringVector *sv);
 void action_zigzag_copy(StringVector *sv);
 
 int main(void) {
-    //TODO: initialize a string vector
-
    //StringVector  strvec = {0,0};
    StringVector strvec;
    sv_init(&strvec);
 
-
-
-    //TODO: initialize the menu array
     MenuItem menu[5] = {
             {
                     menu[0].description = "Add string\n",
@@ -69,7 +60,6 @@ int main(void) {
             }
     };
 
-    //TODO: menu loop
     while (1)
     {
         print_func(&strvec);
@@ -102,19 +92,12 @@ int main(void) {
         }
 
     }
-
-    //TODO: make sure to free any dynamically allocated memory
-    //sv_clear(&strvec);
 }
-
-
-//TODO: complete the action_* functions below
 
 void action_add_string(StringVector *sv)
 {
    char* tmp=get_line();
     sv_add_last(sv,tmp);
-   //printf("print add_string(main.c) -> %s  \n",tmp);
 }
 
 void action_del_string(StringVector* sv)
@@ -137,7 +120,6 @@ void action_rep_char(StringVector* sv)
     scanf("%zu",&index);
     scanf(" %c",&s);
     scanf(" %c",&d);
-   // printf("%zu %c %c",index,s,d); // debug
     str_rep_char(sv->arr[index-1],s,d);
 }
 
