@@ -23,7 +23,7 @@ void sv_clear(StringVector *sv)
     for (int i = 0; i < sv->length; ++i) {
         free(sv->arr[i]);
     }
-    free(sv);
+    free(sv->arr);
 }
 
 //adds str as last cell of sv.

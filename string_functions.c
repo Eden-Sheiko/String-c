@@ -30,23 +30,21 @@ char* str_new_zigzag(const char* str1, const char* str2)
     size_t size_1 = strlen(str1);
     size_t size_2 = strlen(str2);
     char* new_arr = (char*) calloc((size_1+size_2)+1,sizeof(char));
-    int index = 0;
-    for (int i = 0,j=0; i < strlen(str1) , j<strlen(str2) ; ++i,++j) {
-        // if index > i dont enter
-        if(index<=i)
+    char* p;
+    for ( p=new_arr ; *str1 || *str2;)
+    {
+        if (*str1)
         {
-            new_arr[index]=str1[i];
-            ++index;
+            *p = *str1;
+            ++p;
+            ++str1;
         }
-//        new_arr[index]=str1[i];
-//        ++index;
-        if(index>=j)
+        if (*str2)
         {
-            new_arr[index]=str2[j];
-            ++index;
+            *p = *str2;
+            ++p;
+            ++str2;
         }
-//        new_arr[index]=str2[j];
-//        ++index;
     }
     return new_arr;
 }

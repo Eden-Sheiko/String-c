@@ -93,6 +93,7 @@ int main(void) {
                 menu[operation - 1].action(&strvec);
                 break;
             case 0:
+                sv_clear(&strvec);
                 return 0;
 
                 // operator doesn't match any case constant //
@@ -103,7 +104,7 @@ int main(void) {
     }
 
     //TODO: make sure to free any dynamically allocated memory
-    sv_clear(&strvec);
+    //sv_clear(&strvec);
 }
 
 
